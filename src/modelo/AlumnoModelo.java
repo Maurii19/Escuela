@@ -19,6 +19,7 @@ public class AlumnoModelo extends Conector {
 				alumno.setNombre(rst.getString("nombre"));
 				alumno.setDni(rst.getString("dni"));
 				alumno.setEmail(rst.getString("email"));
+				alumnos.add(alumno);
 			}
 			return alumnos;
 		} catch (SQLException e) {
