@@ -1,5 +1,6 @@
 package modelo;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,9 +25,30 @@ public class AsignaturaModelo extends Conector {
 				return asignaturas;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 return asignaturas;
+	}
+	
+	public Asignatura selectporID(int id){	
+		Asignatura asig = new Asignatura();
+		PreparedStatement pst;
+		try {
+			pst = super.conexion.prepareStatement("select * from asignaturas where id=?");
+			pst.setInt(1, id);
+			ResultSet rst = pst.executeQuery();
+			
+			if(rst.next()){
+				asig.setId(rst.getInt("id"));
+				asig.setNombre(rst.getString("nombre"));
+				asig.setHoras(rst.getInt("horas"));
+				
+				return asig;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return asig;
 	}
 }

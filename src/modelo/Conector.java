@@ -4,12 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import config.Config;
-
-
 public class Conector extends Config {
-
+	
 	protected Connection conexion;
+
 	
 	Conector(){
 		try{
@@ -28,6 +26,4 @@ public class Conector extends Config {
 	public void setConexion(Connection conexion){
 		this.conexion = conexion;
 	}
-		
-	}
-
+}

@@ -4,21 +4,31 @@ import java.util.Date;
 
 public class Matricula {
 
-	private int id_alumnos;
-	private int id_asignaturas;
+	private Alumno alumno;
+	private Asignatura asignatura;
 	private Date fecha;
 	
-	public int getId_alumnos() {
-		return id_alumnos;
+	public Matricula(Alumno alumno, Asignatura asignatura, Date fecha){
+		this.alumno=alumno;
+		this.asignatura=asignatura;
+		this.fecha=fecha;
 	}
-	public void setId_alumnos(int id_alumnos) {
-		this.id_alumnos = id_alumnos;
+	
+	public Matricula(){
+		
 	}
-	public int getId_asignaturas() {
-		return id_asignaturas;
+	
+	public Alumno getAlumno() {
+		return alumno;
 	}
-	public void setId_asignaturas(int id_asignaturas) {
-		this.id_asignaturas = id_asignaturas;
+	public void setAlumno(Alumno alumno) {
+		this.alumno = alumno;
+	}
+	public Asignatura getAsignatura() {
+		return asignatura;
+	}
+	public void setAsignatura(Asignatura asignatura) {
+		this.asignatura = asignatura;
 	}
 	public Date getFecha() {
 		return fecha;
@@ -26,4 +36,6 @@ public class Matricula {
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+
+
 }
